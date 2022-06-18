@@ -1,0 +1,30 @@
+<template>
+    <input type="text" v-model="a.c">
+           判断<p>{{b}}</p>
+</template>
+<script>
+export default {
+    data(){
+        return{
+            b:'',
+            a:{
+                name:"ss",
+                c:0
+            }
+        }
+    },
+    watch:{
+        a:{
+            handler:function(va1,oldva1){
+                if(va1.c>=18){
+                    this.b="你已经成年了";
+                    }
+                else{
+                    this.b="你还未成年";
+                }
+                },
+            deep:true  
+        }
+    } 
+}
+</script>
